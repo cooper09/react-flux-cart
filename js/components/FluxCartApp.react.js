@@ -4,6 +4,9 @@ var ProductStore = require('../stores/ProductStore');
 var FluxProduct = require('./FluxProduct.react.js');
 var FluxCart = require('./FluxCart.react.js');
 
+//cooper s - add an input form
+var FluxForm = require('./FluxForm.react.js');
+
 // Method to retrieve state from Stores
 function getCartState() {
   return {
@@ -40,6 +43,8 @@ var FluxCartApp = React.createClass({
   render: function () {
     return (
       <div className="flux-cart-app">
+        <h2>1892</h2>
+        <FluxForm />
         <FluxCart products={this.state.cartItems} count={this.state.cartCount} total={this.state.cartTotal}
                   visible={this.state.cartVisible}/>
         <FluxProduct product={this.state.product} cartitems={this.state.cartItems}

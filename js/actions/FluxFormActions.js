@@ -2,7 +2,7 @@ var AppDispatcher = require('../dispatcher/AppDispatcher');
 var FluxCartConstants = require('../constants/FluxCartConstants');
 
 // Define action methods
-var FluxCartActions = {
+var FluxFormActions = {
 
   // Receive inital product data
   receiveProduct: function (data) {
@@ -56,4 +56,4 @@ var FluxCartActions = {
 
 };//end FluxCartActions
 
-module.exports = FluxCartActions;
+module.exports = FluxFormActions;

@@ -5,13 +5,13 @@ module.exports = {
     localStorage.setItem('product', JSON.stringify([
       {
         id: '0011001',
-        name: 'Scotch.io Signature Lager',
+        name: '1892 Signature Tonic',
         image: 'scotch-beer.png',
-        description: 'The finest lager money can buy. Hints of keyboard aerosol, with a whiff of iKlear wipes on the nose. If you pass out while drinking this beverage, Chris Sevilleja personally tucks you in.',
+        description: 'The finest herbal drink money can buy. Hints of keyboard aerosol, with a whiff of iKlear wipes on the nose. If you pass out while drinking this beverage, Chris Sevilleja personally tucks you in.',
         variants: [
           {
             sku: '123123',
-            type: '40oz Bottle',
+            type: '16oz Bottle',
             price: 4.99,
             inventory: 1
 

@@ -20,6 +20,10 @@ var FluxCart = React.createClass({
     FluxCartActions.updateCartVisible(false);
   },
 
+  //cooper s - We are now buying. Place Payment code here
+  buyMe: function() {
+    alert('Payment Module is attached here...');
+  },
   // Render cart view
   render: function () {
     var self = this, products = this.props.products;
@@ -44,7 +48,7 @@ var FluxCart = React.createClass({
               )
             })}
           </ul>
-          <span className="total">Total: ${this.props.total}</span>
+          <span className="total">Total: ${this.props.total}<button className="" onClick={this.buyMe}>BUY</button></span>
         </div>
         <button type="button" className="view-cart" onClick={this.openCart}
                 disabled={Object.keys(this.props.products).length > 0 ? "" : "disabled"}>View Cart
