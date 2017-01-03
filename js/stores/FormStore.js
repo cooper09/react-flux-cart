@@ -9,8 +9,13 @@ var _ = require('underscore');
 
 // Set cart visibility
 function setFormVisible(formVisible) {
-  console.log("Set the form visible: " + formVisible );
-  _formVisible = true; //formVisible;
+  console.log("FormStore setFormVisible: " + formVisible );
+  //_formVisible = true; //formVisible;
+  if (!formVisible) {
+    _formVisible = false;
+  } else {
+    _formVisible = true;
+  }
 }
 
 // Extend Cart Store with EventEmitter to add eventing capabilities
@@ -45,9 +50,15 @@ AppDispatcher.register(function (payload) {
     // Respond to SHOW_FORM action
     case 'SHOW_FORM':
       console.log('FormStore AppDispatcher - Case SHOW_FORM: ' + _formVisible );
+      _formVisible = true;
       setFormVisible(_formVisible);
-      break;
-  }
+    break
+    case 'HIDE_FORM':
+      console.log('FormStore AppDispatcher - Case HIDE_FORM: ' + _formVisible );
+      _formVisible = false;
+      setFormVisible(_formVisible);
+    break;
+  }//end switch
   // If action was responded to, emit change event
   FormStore.emitChange();
   return true;

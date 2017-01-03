@@ -7,13 +7,15 @@ var FluxCart = React.createClass({
 
   // Hide cart via Actions
   closeCart: function () {
+    console.log('FluxCart.closeCart...');
     FluxCartActions.updateCartVisible(false);
+    FluxFormActions.notFormVisible(true);
   },
 
   // Show cart via Actions
   openCart: function () {
     FluxCartActions.updateCartVisible(true);
-    FluxFormActions.formVisible(false);
+    FluxFormActions.formVisible(true);
   },
 
   // Remove item from Cart via Actions
@@ -27,8 +29,8 @@ var FluxCart = React.createClass({
     var self = this, products = this.props.products;
     return (
       <div className={"flux-cart " + (this.props.visible ? 'active' : '')}>
-        <div className="mini-cart">
-          <button type="button" className="close-cart" onClick={this.closeCart}>&times;</button>
+        <div className="mini-cart">TEST
+          <button type="button" className="close-cart" onClick={this.closeCart}>Close&times;</button>
           <ul>
             {Object.keys(products).map(function (product) {
               return (
