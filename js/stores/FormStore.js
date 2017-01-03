@@ -4,12 +4,13 @@ var FluxCartConstants = require('../constants/FluxCartConstants');
 var _ = require('underscore');
 
 // Define initial data points
- _formVisible = true;
+ _formVisible = false;
 
 
 // Set cart visibility
 function setFormVisible(formVisible) {
-  _formVisible = false; //formVisible;
+  console.log("Set the form visible: " + formVisible );
+  _formVisible = true; //formVisible;
 }
 
 // Extend Cart Store with EventEmitter to add eventing capabilities
@@ -19,6 +20,7 @@ var FormStore = _.extend({}, EventEmitter.prototype, {
   getFormVisible: function () {
     console.log('FormStore - getFormVisible: ' + _formVisible);
     return _formVisible;
+//   return false;
   },
   // Emit Change event
   emitChange: function () {
@@ -36,12 +38,13 @@ var FormStore = _.extend({}, EventEmitter.prototype, {
 
 // Register callback with AppDispatcher
 AppDispatcher.register(function (payload) {
-  console.log('Form AppDispatcher - payload: ', payload.action.actionType );
+  console.log('FormStore AppDispatcher - payload: ', payload.action.actionType );
   var action = payload.action.actionType;
   var text;
-  switch (action.actionType) {
+  switch (payload.action.actionType) {
     // Respond to SHOW_FORM action
     case 'SHOW_FORM':
+      console.log('FormStore AppDispatcher - Case SHOW_FORM: ' + _formVisible );
       setFormVisible(_formVisible);
       break;
   }

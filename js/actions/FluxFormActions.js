@@ -1,17 +1,25 @@
+
 var AppDispatcher = require('../dispatcher/AppDispatcher');
-var FluxCartConstants = require('../constants/FluxCartConstants');
+var FluxFormConstants = require('../constants/FluxFormConstants');
 
 // Define action methods
 var FluxFormActions = {
-  // Update cart visibility status
-  formVisible: function(data) {
-  console.log("FormActions - formVisible: "+ data );
 
-  AppDispatcher.handleViewAction({
-      actionType:AppConstants.SHOW_FORM,
+  // Receive inital product data
+  formVisible: function (data) {
+    AppDispatcher.handleAction({
+      actionType: FluxFormConstants.SHOW_FORM,
       data: data
-    }) 
-  }//end FluxFormActions
+    })
+  },
+
+  // Update form visibility status
+  notFormVisible: function ( inVisible) {
+    AppDispatcher.handleAction({
+      actionType: FluxFormConstants.HIDE_FORM,
+      datae: data
+    })
+  }
 
 };
 

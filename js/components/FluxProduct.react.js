@@ -1,5 +1,6 @@
 var React = require('react');
 var FluxCartActions = require('../actions/FluxCartActions');
+var FluxFormActions = require('../actions/FluxFormActions');
 
 // Flux product view
 var FluxProduct = React.createClass({

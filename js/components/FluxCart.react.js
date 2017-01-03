@@ -1,5 +1,6 @@
 var React = require('react');
 var FluxCartActions = require('../actions/FluxCartActions');
+var FluxFormActions = require('../actions/FluxFormActions');
 
 // Flux cart view
 var FluxCart = React.createClass({
@@ -12,6 +13,7 @@ var FluxCart = React.createClass({
   // Show cart via Actions
   openCart: function () {
     FluxCartActions.updateCartVisible(true);
+    FluxFormActions.formVisible(false);
   },
 
   // Remove item from Cart via Actions
